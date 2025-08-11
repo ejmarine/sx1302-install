@@ -23,7 +23,7 @@ else
     if [ "$pie5" == "y" ]; then
         wget https://files.waveshare.com/wiki/SX130X/demo/PI5/sx130x_hal_rpi5.zip
         unzip sx130x_hal_rpi5.zip
-        mv sx130x_hal_rpi5 ~/Documents/sx1302_hal
+        mv sx1302_hal_rpi5 ~/Documents/sx1302_hal
     else
         echo "No Raspberry Pi selected"
         exit
