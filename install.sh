@@ -6,9 +6,10 @@ if [ "$EUID" -eq 0 ]; then
     exit
 fi
 
-read -p "Enabling SPI. Is this a Raspberry Pi? (y/n)" pie
+read -p "Enabling SPI and I2C. Is this a Raspberry Pi? (y/n)" pie
 if [ "$pie" == "y" ]; then
     sudo raspi-config nonint do_spi 0
+    sudo raspi-config nonint do_i2c 0
 fi
 
 sudo apt update
