@@ -12,7 +12,7 @@ After=network.target
 User=$USER
 Group=www-data
 WorkingDirectory=$(pwd)/packet_forwarder
-ExecStart=$(pwd)/packet_forwarder/lora_pkt_fwd -c /home/pi/Documents/sx1302_hal/packet_forwarder/global_conf.json
+ExecStart=$(pwd)/packet_forwarder/lora_pkt_fwd -c $(pwd)/packet_forwarder/global_conf.json
 ExecReload=/bin/kill -s HUP $MAINPID
 Restart=on-failure
 
