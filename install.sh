@@ -19,14 +19,15 @@ read -p "Install for Raspberry Pi3/4? (y/n)" pie34
 if [ "$pie34" == "y" ]; then
     git clone https://github.com/Lora-net/sx1302_hal.git ~/Documents/sx1302_hal
 else
-    echo "No Raspberry Pi selected"
-    exit
-fi
-read -p "Install for Raspberry Pi 5? (y/n)" pie5
-if [ "$pie5" == "y" ]; then
-    wget https://files.waveshare.com/wiki/SX130X/demo/PI5/sx130x_hal_rpi5.zip
-    unzip sx130x_hal_rpi5.zip
-    mv sx130x_hal_rpi5 ~/Documents/sx1302_hal
+    read -p "Install for Raspberry Pi 5? (y/n)" pie5
+    if [ "$pie5" == "y" ]; then
+        wget https://files.waveshare.com/wiki/SX130X/demo/PI5/sx130x_hal_rpi5.zip
+        unzip sx130x_hal_rpi5.zip
+        mv sx130x_hal_rpi5 ~/Documents/sx1302_hal
+    else
+        echo "No Raspberry Pi selected"
+        exit
+    fi
 fi
 
 cp install_svc.sh ~/Documents/sx1302_hal/
